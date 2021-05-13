@@ -61,7 +61,8 @@ if not exists(workFolder):
 	makedirs(workFolder)
 
 # находим все исходные csv
-csvRoot = r'{}\2019'.format(getcwd())#input year!!!!!!!!!!
+yyyy = input('Введите год: ')
+csvRoot = r'{}\{}'.format(getcwd(), yyyy)
 months = listdir(csvRoot)
 csvFiles = []
 
@@ -114,6 +115,6 @@ wbr.close
 
 for file in xlsxFiles:
 	remove(file)
-	
+
 print('Формирование файла статистики успешно завершено: {}'.format(resultFileName))
 input()
